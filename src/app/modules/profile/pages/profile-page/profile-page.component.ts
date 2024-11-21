@@ -133,8 +133,9 @@ export class ProfilePageComponent implements OnDestroy {
       map((events) =>
         events.filter(
           (event) =>
-            DateTime.fromISO(event?.end).plus({ days: 7 }).toJSDate() >
-            new Date(),
+            DateTime.fromISO(event?.end)
+              .plus({ days: 7 })
+              .toJSDate() > new Date(),
         ),
       ),
     );
